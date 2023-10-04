@@ -253,11 +253,11 @@ Criar **o banco de dados** de acordo com a **Migration** (o primeiro é sem argu
 
 Comando de 'database update', '--' e o caminho '.\\Gameapp.Api' é um identificador que estou **passando um argumento**, note que no parâmetro da classe possui '**string [] args**':
 
-### Startup.cs
+### Startup
 
 Agora criando o arquivo **Startup.cs** e modificando o **Program.cs**, porque ao navegar pela internet buscando algumas soluções você vai se deparar com essas coisas diferentes visualmente. Lembrando que isso é no **Project Gameapp.Api**.
 Criando o arquivo:
-**Startup**
+**Startup.cs**
 ```cs
 namespace Gameapp.Api;
 
