@@ -6,18 +6,18 @@ Só para contextualizar, eu tinha certos problemas para criar essas soluções q
 Se quiser pular tudo e ir direto pro repositório do Github: [Gameapp - Github](https://github.com/GMessias/Gameapp)
 
 
-[Começo](#Começo)
-[New Solution](#NewSolution)
-[Pastas](#Pastas)
-[EF Core](#EFCore)
-[Startup.cs](#Startup.cs)
-[AutoMapper](#AutoMapper)
-[Repositório](#Repositório)
-[Serviço](#Serviço)
-[Controller](#Controller)
-[CSPROJ](#CSPROJ)
-[Conteúdos](#Conteúdos)
-[Agradecimentos](#Agradecimentos)
+* [Começo](#Começo)
+* [New Solution](#NewSolution)
+* [Pastas](#Pastas)
+* [EF Core](#EFCore)
+* [Startup.cs](#Startup)
+* [AutoMapper](#AutoMapper)
+* [Repositório](#Repositório)
+* [Serviço](#Serviço)
+* [Controller](#Controller)
+* [CSPROJ](#CSPROJ)
+* [Conteúdos](#Conteúdos)
+* [Agradecimentos](#Agradecimentos)
 
 ### Começo
 
@@ -257,7 +257,7 @@ Comando de 'database update', '--' e o caminho '.\\Gameapp.Api' é um identifica
 
 Agora criando o arquivo **Startup.cs** e modificando o **Program.cs**, porque ao navegar pela internet buscando algumas soluções você vai se deparar com essas coisas diferentes visualmente. Lembrando que isso é no **Project Gameapp.Api**.
 Criando o arquivo:
-**Startup.cs**
+**Startup**
 ```cs
 namespace Gameapp.Api;
 
