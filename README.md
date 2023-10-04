@@ -10,7 +10,7 @@ Se quiser pular tudo e ir direto pro repositório do Github: [Gameapp - Github](
 * [New Solution](#NewSolution)
 * [Pastas](#Pastas)
 * [EF Core](#EFCore)
-* [Startup.cs](#Startup)
+* [Startup](#Startup)
 * [AutoMapper](#AutoMapper)
 * [Repositório](#Repositório)
 * [Serviço](#Serviço)
