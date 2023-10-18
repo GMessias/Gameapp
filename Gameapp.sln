@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gameapp.Application", "Game
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gameapp.Infrastructure", "Gameapp.Infrastructure\Gameapp.Infrastructure.csproj", "{DB7B0456-48AA-4994-8426-9F8E0C77F3FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gameapp.Domain", "Gameapp.Domain\Gameapp.Domain.csproj", "{51746DB2-2363-46D6-85CD-27650D25B77B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{DB7B0456-48AA-4994-8426-9F8E0C77F3FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB7B0456-48AA-4994-8426-9F8E0C77F3FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB7B0456-48AA-4994-8426-9F8E0C77F3FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51746DB2-2363-46D6-85CD-27650D25B77B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51746DB2-2363-46D6-85CD-27650D25B77B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51746DB2-2363-46D6-85CD-27650D25B77B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51746DB2-2363-46D6-85CD-27650D25B77B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{5D5E22B9-27D2-4683-BE9D-01D7C8515519} = {738BAF95-F2E6-4544-BC87-C52E5E570C65}
 		{B20DD7C6-1D36-436F-81DD-E52E05AED679} = {738BAF95-F2E6-4544-BC87-C52E5E570C65}
 		{DB7B0456-48AA-4994-8426-9F8E0C77F3FD} = {738BAF95-F2E6-4544-BC87-C52E5E570C65}
+		{51746DB2-2363-46D6-85CD-27650D25B77B} = {738BAF95-F2E6-4544-BC87-C52E5E570C65}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7004D211-8F86-4CD0-8AFD-7910FE3B7358}

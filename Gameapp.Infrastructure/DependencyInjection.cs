@@ -1,4 +1,5 @@
-﻿using Gameapp.Application.Interfaces.Repositories;
+﻿using Gameapp.Application.Contracts;
+using Gameapp.Domain.Repositories;
 using Gameapp.Infrastructure.Data;
 using Gameapp.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +18,7 @@ public static class DependencyInjection
         services.AddDbContext<GameContext>(options => options.UseNpgsql(connectionString));
 
         services.AddScoped<IItemRepository, ItemRepository>();
+        services.AddScoped<IApplicationDbContext, GameContext>();
 
         return services;
     }

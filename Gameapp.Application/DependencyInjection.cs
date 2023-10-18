@@ -1,6 +1,4 @@
-﻿using Gameapp.Application.Interfaces.Services;
-using Gameapp.Application.Mappings;
-using Gameapp.Application.Services;
+﻿using Gameapp.Application.Mappings;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Gameapp.Application;
@@ -9,8 +7,8 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly));
         services.AddAutoMapper(typeof(AutoMapperProfile));
-        services.AddScoped<IItemService, ItemService>();
 
         return services;
     }

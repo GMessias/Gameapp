@@ -1,5 +1,10 @@
-﻿using Gameapp.Application.Dtos;
-using Gameapp.Application.Interfaces.Services;
+﻿using Gameapp.Application.Features.Items.Commands.CreateItem;
+using Gameapp.Application.Features.Items.Commands.DeleteItem;
+using Gameapp.Application.Features.Items.Commands.UpdateItem;
+using Gameapp.Application.Features.Items.Queries.GetAllItems;
+using Gameapp.Application.Features.Items.Queries.GetItemById;
+using Gameapp.Domain.Entities;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Gameapp.Api.Controllers;
@@ -8,72 +13,60 @@ namespace Gameapp.Api.Controllers;
 [ApiController]
 public class ItemController : ControllerBase
 {
-    private readonly IItemService _itemService;
+    private readonly IMediator _mediator;
 
-    public ItemController(IItemService itemService)
+    public ItemController(IMediator mediator)
     {
-        _itemService = itemService;
+        _mediator = mediator;
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<ItemDto>> Get(int id)
+    public async Task<ActionResult<Item>> GetById(Guid id)
     {
-        ItemDto? itemDto = await _itemService.Get(id);
+        Item? item = await _mediator.Send(new GetItemByIdQuery { Id = id });
 
-        if (itemDto == null)
+        if (item == null)
         {
             return NotFound();
         }
 
-        return Ok(itemDto);
+        return Ok(item);
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<ItemDto>>> GetAll()
+    public async Task<ActionResult<IEnumerable<Item>>> GetAll()
     {
-        IEnumerable<ItemDto>? itemList = await _itemService.GetAll();
+        IEnumerable<Item>? itemList = await _mediator.Send(new GetAllItemsQuery());
 
         return Ok(itemList);
     }
 
     [HttpPost]
-    public async Task<ActionResult<ItemDto>> Add(ItemDto itemDto)
+    public async Task<ActionResult<Item>> Create(CreateItemCommand command)
     {
-        ItemDto newItem = await _itemService.Add(itemDto);
+        Item item = await _mediator.Send(command);
 
-        return CreatedAtAction(nameof(Get), new { id = newItem.Id }, newItem);
+        return CreatedAtAction(nameof(GetById), new { id = item.Id }, item);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, ItemDto itemDto)
+    public async Task<IActionResult> Update(Guid id, UpdateItemCommand command)
     {
-        if (id != itemDto.Id)
+        if (id != command.Id)
         {
             return BadRequest();
         }
 
-        ItemDto? newItem = await _itemService.Update(id, itemDto);
-
-        if (newItem == null)
-        {
-            return NotFound();
-        }
+        await _mediator.Send(command);
 
         return NoContent();
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
+    public async Task<IActionResult> Delete(Guid id)
     {
-        bool success = await _itemService.Delete(id);
+        await _mediator.Send(new DeleteItemCommand { Id = id });
 
-        if (success)
-        {
-            return NoContent();
-        }
-        else
-        {
-            return BadRequest();
-        }
+        return NoContent();
     }
 }
