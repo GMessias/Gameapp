@@ -1,4 +1,5 @@
 ﻿using Gameapp.Application.Contracts;
+using Gameapp.Domain.Entities;
 using Gameapp.Domain.Repositories;
 using Gameapp.Infrastructure.Data;
 using Gameapp.Infrastructure.Repositories;
@@ -17,6 +18,8 @@ public static class DependencyInjection
         AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         services.AddDbContext<GameContext>(options => options.UseNpgsql(connectionString));
 
+        services.AddScoped<IRepository<Item>, Repository<Item>>();
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<IItemRepository, ItemRepository>();
         services.AddScoped<IApplicationDbContext, GameContext>();
 

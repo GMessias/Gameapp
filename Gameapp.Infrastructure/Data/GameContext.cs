@@ -11,9 +11,4 @@ public class GameContext : DbContext, IApplicationDbContext
     }
 
     public DbSet<Item> Items { get; set; }
-
-    public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
-    {
-        return base.SaveChangesAsync(cancellationToken);
-    }
 }

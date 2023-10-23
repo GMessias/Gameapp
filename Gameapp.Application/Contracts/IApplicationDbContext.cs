@@ -6,5 +6,4 @@ namespace Gameapp.Application.Contracts;
 public interface IApplicationDbContext
 {
     DbSet<Item> Items { get; set; }
-    Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }

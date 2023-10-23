@@ -1,5 +1,4 @@
-﻿using Gameapp.Domain.Entities;
-using MediatR;
+﻿using MediatR;
 
 namespace Gameapp.Application.Features.Items.Commands.UpdateItem;
 

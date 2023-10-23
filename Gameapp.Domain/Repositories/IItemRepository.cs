@@ -2,9 +2,6 @@
 
 namespace Gameapp.Domain.Repositories;
 
-public interface IItemRepository
+public interface IItemRepository : IRepository<Item>
 {
-    Task<Item> CreateAsync(Item item);
-    Task UpdateAsync(Item item);
-    Task DeleteAsync(Item item);
 }
