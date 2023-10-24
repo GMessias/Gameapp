@@ -9,6 +9,9 @@ public class UpdateItemCommandValidator : AbstractValidator<UpdateItemCommand>
         RuleFor(x => x.Id)
             .Must(id => id != Guid.Empty)
             .WithMessage("Id não pode ser vazio.");
+        RuleFor(x => x.Id)
+            .Must(id => !string.IsNullOrEmpty(id.ToString()))
+            .WithMessage("Id não pode ser nulo ou uma string vazia.");
 
         RuleFor(x => x.Name)
             .NotEmpty()
