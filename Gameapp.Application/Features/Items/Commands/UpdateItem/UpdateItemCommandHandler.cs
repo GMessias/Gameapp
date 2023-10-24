@@ -10,7 +10,7 @@ using MediatR;
 
 namespace Gameapp.Application.Features.Items.Commands.UpdateItem;
 
-public class UpdateItemCommandHandler : IRequestHandler<UpdateItemCommand, Unit>
+internal sealed class UpdateItemCommandHandler : IRequestHandler<UpdateItemCommand, Unit>
 {
     private readonly IMapper _mapper;
     private readonly IMediator _mediator;

@@ -8,7 +8,7 @@ using MediatR;
 
 namespace Gameapp.Application.Features.Items.Commands.CreateItem;
 
-public class CreateItemCommandHandler : IRequestHandler<CreateItemCommand, Item>
+internal sealed class CreateItemCommandHandler : IRequestHandler<CreateItemCommand, Item>
 {
     private readonly IMapper _mapper;
     private readonly IUnitOfWork _unitOfWork;

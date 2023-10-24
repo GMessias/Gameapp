@@ -9,7 +9,7 @@ using MediatR;
 
 namespace Gameapp.Application.Features.Items.Commands.DeleteItem;
 
-public class DeleteItemCommandHandler : IRequestHandler<DeleteItemCommand, Unit>
+internal sealed class DeleteItemCommandHandler : IRequestHandler<DeleteItemCommand, Unit>
 {
     private readonly IMediator _mediator;
     private readonly IUnitOfWork _unitOfWork;

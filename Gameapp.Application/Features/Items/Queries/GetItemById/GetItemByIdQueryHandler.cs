@@ -7,7 +7,7 @@ using MediatR;
 
 namespace Gameapp.Application.Features.Items.Queries.GetItemById;
 
-public class GetItemByIdQueryHandler : IRequestHandler<GetItemByIdQuery, Item>
+internal sealed class GetItemByIdQueryHandler : IRequestHandler<GetItemByIdQuery, Item>
 {
     private readonly IApplicationDbContext _context;
     private readonly IValidator<GetItemByIdQuery> _validator;

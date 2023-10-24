@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Gameapp.Application.Features.Items.Queries.GetAllItems;
 
-public class GetAllItemsQueryHandler : IRequestHandler<GetAllItemsQuery, IEnumerable<Item>>
+internal sealed class GetAllItemsQueryHandler : IRequestHandler<GetAllItemsQuery, IEnumerable<Item>>
 {
     private readonly IApplicationDbContext _context;
 

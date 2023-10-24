@@ -18,4 +18,15 @@
     <ProjectReference Include="..\Gameapp.Domain\Gameapp.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+	  <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+		  <_Parameter1>Architecture.Tests</_Parameter1>
+	  </AssemblyAttribute>	
+  </ItemGroup>
+  <ItemGroup>
+	  <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+		  <_Parameter1>Gameapp.Application.Tests</_Parameter1>
+	  </AssemblyAttribute>
+  </ItemGroup>
+
 </Project>
